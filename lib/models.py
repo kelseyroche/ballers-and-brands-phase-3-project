@@ -1,9 +1,8 @@
 import sqlite3
 
-DATABASE = 'lib/wnba_project.db'  # Ensure this path is correct
+DATABASE = 'lib/wnba_project.db' 
 
 class Database:
-    """A simple class to manage database connections."""
     @staticmethod
     def get_connection():
         conn = sqlite3.connect(DATABASE)
@@ -14,7 +13,6 @@ class Database:
         conn.close()
 
 class Team:
-    """Team model with attributes and relationships."""
     __tablename__ = "teams"
 
     def __init__(self, id, name, mascot, city, year_founded):
@@ -73,7 +71,6 @@ class Team:
         Database.close_connection(conn)
 
 class Athlete:
-    """Athlete model with attributes and relationships."""
     __tablename__ = "athletes"
 
     def __init__(self, id, name, college, position, team_id):
@@ -133,7 +130,6 @@ class Athlete:
         Database.close_connection(conn)
 
 class Brand:
-    """Brand model with attributes and relationships."""
     __tablename__ = "brands"
 
     def __init__(self, id, name, category, country_of_origin):
@@ -190,7 +186,6 @@ class Brand:
         Database.close_connection(conn)
 
 class Deal:
-    """Deal model with attributes and relationships."""
     __tablename__ = "deals"
 
     def __init__(self, id, athlete_fee, athlete_id, brand_id):
